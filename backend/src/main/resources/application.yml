@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://UPDATE_THIS_HOST_NAME:5432/music-library
+    url: jdbc:postgresql://database:5432/music-library
     username: jensenyh
     password: losenord
 

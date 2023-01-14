@@ -1,0 +1,22 @@
+services:
+  backend:
+    image: maven
+    ports:
+      - 8091:8091
+    volumes:
+      - ./backend:/app
+      - ./backend/.mvn_repo:/root/.m2/repository
+    working_dir: /app
+    command: "mvn spring-boot:run"
+    restart: unless-stopped
+  database:
+    image: postgres
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/data:/data/music-library
+    environment:
+      POSTGRES_DB: music-library
+      POSTGRES_USER: jensenyh
+      POSTGRES_PASSWORD: losenord
+      PGDATA: /data/music-library
+    restart: unless-stopped
