@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://UPDATE_THIS_HOST_NAME:5432/music-library
+    username: jensenyh
+    password: losenord
+
+server:
+  port: 8091
